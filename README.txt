@@ -1,1 +1,1 @@
-Say I start  writing this
+Say I start  writing this about this lecture
