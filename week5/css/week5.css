@@ -1,0 +1,24 @@
+body{
+	background: #000000;
+	margin: 0;
+}
+
+h1{
+	padding: 20px 15px;
+	background: #666666;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 2px #CCCCCC;
+	text-align: center;
+}
+
+.container{
+	background: #CCCCCC;
+	width: 826px;
+	margin: 0 auto;
+}
+
+#essay{
+	padding: 15px 50px 50px 50px;
+	background: #FFFFFF;
+	color: #666666;
+}
