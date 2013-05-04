@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="ContentType" content="text/html; charset=utf-8">
+	<title>East Lansing Housing</title>
+	<link rel="stylesheet" href="test.css" type="text/css" media="screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css" media="screen">
+	#slideshow {
+    position:relative;
+    height: 250px;
+    
+}
+
+#slideshow IMG {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:8;
+    text-align: center;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
+}
+
+li {
+	text-align: middle;
+	}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>          
+ <script type="text/javascript">                                         
+	
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    var $next = $active.next();    
+    
+    $next.addClass('active');
+    
+    $active.removeClass('active');
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+    var $next = $active.next();
+
+    $active.addClass('last-active');
+        
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+
+    $active.addClass('last-active');
+        
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});                                     
+ </script>                                              
+</head>
+<body>
+	<div class="container">
+		<h1>blah</h1> 
+		<ul id="nav">
+			<li><a href= "index.html">Home</a></li>
+			<li><a href="house.html">Houses</a></li>
+			<li><a href="map.html">Location</a></li>
+			<li><a href= "AboutUs.html">About Us</a></li>
+			<li id="cse-search-box" action="http://google.com/cse">
+  <input type="hidden" name="cx" value="YOUR SEARCH ENGINE ID goes here" />
+  <input type="hidden" name="ie" value="UTF-8" />
+  <input type="text" name="q" size="25" />
+  <input type="submit" name="sa" value="Search" /></li>
+		</ul>
+		<div class="wrap">
+		<header>
+			<h2>532 Park Lane</h2>
+			</header>
+		<section>
+			<p>"The house that we lived in was amazing, but out land lord was a jerk and charged us for some ridiculous things. The location is amazing though, close to campus and right by downtown. Most of my friends live in the area but we all had to deal with the same land lord. As long as you have your friends close by, it will make up for it."- Kevin, Junior</p>
+			<ul>
+				<li>5 Bedroom</li>
+				<li>$3200/month</li>
+				<li>4 minutes from campus</li?>
+				<li>3 minutes from downton center</li>
+				<li>Not off a main street, "neighborhood feel"</li>
+				<li>all student housing on street</li>
+			</ul>			
+		</section>
+		<aside>
+			<p><img src="images/student.jpg" width="260" height="300" alt="My House" /></p>
+		</aside>
+	<div id="slideshow">
+    	<img src="images/1.png" alt="" class="active" />
+    	<img src="images/2.png" alt="" class="last-active"/>
+    	<img src="images/3.png" alt="" />
+	</div>
+	<footer>
+			<p><a href="http://twitter.com/elhousing"><img src="images/twittericon.png" alt="twitter logo"></a></p>
+			<p><a href="http://facebook.com"><img src="images/like_icon.png" alt="facebook logo"></a></p>
+			<p><a href="http://tumblr.com"><img src="images/tumblr-logo.jpg" alt="tumblr logo"></a></p>
+	</footer>	
+	</div>
+</body>
+</html>	
